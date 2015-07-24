@@ -4,7 +4,7 @@ defmodule CurryTest do
 
   curry add(a,b), do: a + b
 
-  curry three(s1, s2, s3) do
+  curryp three(s1, s2, s3) do
   	s1 <> " " <> s2 <> " " <> s3
   end
 

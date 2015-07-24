@@ -3,11 +3,19 @@ defmodule Curry do
 
   defmacro __using__(_) do
     quote do
-      import Curry, only: [curry: 2]
+      import Curry, only: [curry: 2, curryp: 2]
     end
   end
 
   defmacro curry(head, do: body) do
+    write_def(head, body, false)
+  end
+
+  defmacro curryp(head, do: body) do
+    write_def(head, body, true)
+  end
+
+  defp write_def(head, body, private) do
     {_, _, fargs} = head
     case fargs do
       [] -> raise ArgumentError, "cannot curry a function when its arity is 0"
@@ -17,8 +25,9 @@ defmodule Curry do
     {fname, ctx, [arg1|args_rest]} = head
     small_head = {fname,ctx,[arg1]}
     body = make_fns(args_rest, body)
-    quote do
-      def unquote(small_head), do: unquote(body)
+    case private do
+      true  -> quote do: (defp unquote(small_head), do: unquote(body))
+      _     -> quote do: (def unquote(small_head), do: unquote(body))
     end
   end
 
