@@ -1,10 +1,9 @@
 Curry
 =====
 
-Curry allow you to define functions that are automatically curried :
+Curry allows you to define curried functions :
 
 ```elixir
-
 defmodule Curry.Example do
 
   # 1. Use the Curry module
@@ -30,8 +29,6 @@ defmodule Curry.Example do
   end
 
 end
-
-
 ```
 
 TODO:
