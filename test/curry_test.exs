@@ -16,8 +16,4 @@ defmodule CurryTest do
     assert three("I").("am").("you") == "I am you"
   end
 
-  defp call_yourself(arg, fun) do
-  	fun(arg)
-  end
-
 end
