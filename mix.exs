@@ -5,7 +5,12 @@ defmodule Curry.Mixfile do
     [app: :curry,
      version: "0.0.1",
      elixir: "~> 1.0",
-     description: "A simple currying macro",
+     description: "A simple currying macro allowing to define curried functions in Elixir modules.",
+     package: [
+      contributors: ["Ludovic Demblans"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/niahoo/elixir-curry"}
+    ],
      deps: deps]
   end
 
