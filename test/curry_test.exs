@@ -10,7 +10,6 @@ defmodule CurryTest do
 
   test "the truth" do
   	increment = add(1)
-  	IO.puts "increment: #{inspect increment}"
     assert :erlang.is_function(increment)
     assert increment.(100) == 101
     assert three("I").("am").("you") == "I am you"
