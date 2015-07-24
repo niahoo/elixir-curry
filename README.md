@@ -36,6 +36,5 @@ TODO:
  * first call dotted ?
  * possibility to add more than one argument on first call
  * … on any call ?
- * `curryp` for `defp`
  * more tests
  * …
